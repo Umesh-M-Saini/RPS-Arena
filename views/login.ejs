@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>RPS Arena - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheet/login.css">
+</head>
+
+<body>
+
+  <!-- Floating Icons -->
+  <div class="floating rock">🪨</div>
+  <div class="floating paper">📄</div>
+  <div class="floating scissors">✂️</div>
+
+  <% if(error==="user_not_found" ){ %>
+    <div class="error-box" id="alertBox">⚠️ User not found. Please check.</div>
+    <% } %>
+
+      <% if(error==="wrong_password" ){ %>
+        <div class="error-box" id="alertBox">⚠️ Wrong password</div>
+        <% } %>
+
+          <% if(error==="guest_limit" ){ %>
+            <div class="error-box" id="alertBox">⚠️ Guest users can play only 1 match. Please login.</div>
+            <% } %>
+
+              <div class="login-card">
+                <h1>RPS Arena</h1>
+                <p>Enter the Arena. Defeat the Machine.</p>
+
+                <form action="/auth/login" method="POST">
+
+                  <div class="input-group">
+                    <input type="email" name="email" placeholder="Enter Email" required>
+                  </div>
+
+                  <div class="input-group password-group">
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    <span id="togglePassword">👁️</span>
+                  </div>
+
+                  <button type="submit" class="login-btn">Login</button>
+                </form>
+
+                <div class="bottom-text">
+                  Don't have an account? <a href="/signup">Create Account</a>
+                </div>
+              </div>
+
+              <script src="/javascript/login.js"></script>
+</body>
+
+</html>

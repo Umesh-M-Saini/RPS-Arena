@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | RPS Arena</title>
+    <link rel="stylesheet" href="/stylesheet/profile.css">
+</head>
+<body>
+
+    <!-- Floating Background Icons -->
+    <div class="floating rock">🪨</div>
+    <div class="floating paper">📄</div>
+    <div class="floating scissors">✂️</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">RPS Arena</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/play">Play</a></li>
+            <li><a href="/profile" class="active">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Profile Content -->
+    <div class="profile-container">
+        
+        <div class="profile-card">
+            <div class="username">
+                👤 <%= user.username %>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span>🎮 Total Matches</span>
+                    <h2><%= user.totalMatches %></h2>
+                </div>
+
+                <div class="stat">
+                    <span>🏆 Wins</span>
+                    <h2><%= user.wins %></h2>
+                </div>
+
+                <div class="stat">
+                    <span>❌ Losses</span>
+                    <h2><%= user.losses %></h2>
+                </div>
+
+                <div class="stat">
+                    <span>⭐ Points</span>
+                    <h2><%= user.points %></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

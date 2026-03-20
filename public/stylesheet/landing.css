@@ -1,0 +1,249 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background */
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+overflow-x:hidden;
+position:relative;
+}
+
+
+/* Floating Icons Background */
+
+.floating{
+position:absolute;
+font-size:40px;
+opacity:0.08;
+animation:float 12s infinite linear;
+z-index:-1;
+pointer-events:none;
+}
+
+.rock{left:10%; animation-duration:12s;}
+.paper{left:50%; animation-duration:15s;}
+.scissors{left:80%; animation-duration:18s;}
+
+@keyframes float{
+0%{transform:translateY(100vh) rotate(0deg);}
+100%{transform:translateY(-50vh) rotate(360deg);}
+}
+
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#0a0a14;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#8b5cf6;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#8b5cf6;
+}
+
+.play-btn{
+background:linear-gradient(45deg,#4f46e5,#9333ea);
+padding:10px 20px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+}
+
+
+/* Hero */
+
+.hero{
+height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background: radial-gradient(circle at top,#1f1f3d,#0f0f1b);
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.hero-buttons a{
+margin:10px;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+}
+
+.btn-primary{
+background:linear-gradient(45deg,#3b82f6,#9333ea);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid #8b5cf6;
+color:white;
+}
+
+
+/* Features */
+
+.features{
+padding:80px 10%;
+text-align:center;
+}
+
+.feature-container{
+display:flex;
+gap:40px;
+margin-top:50px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.feature-card{
+background:#1a1a2e;
+padding:30px;
+border-radius:15px;
+width:250px;
+transition:.3s;
+}
+
+.feature-card i{
+font-size:40px;
+color:#8b5cf6;
+margin-bottom:15px;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+}
+
+
+/* Leaderboard */
+
+.leaderboard{
+padding:80px 10%;
+text-align:center;
+}
+
+.leaderboard-container{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.player-card{
+background:#1a1a2e;
+padding:25px;
+border-radius:15px;
+width:200px;
+}
+
+.player-card img{
+border-radius:50%;
+margin:10px 0;
+}
+
+.trophy{
+color:gold;
+font-size:25px;
+}
+
+
+/* CTA */
+
+.cta{
+padding:80px 10%;
+text-align:center;
+background:linear-gradient(45deg,#312e81,#6d28d9);
+}
+
+.cta-btn{
+margin-top:20px;
+display:inline-block;
+padding:14px 30px;
+background:white;
+color:black;
+border-radius:30px;
+text-decoration:none;
+}
+
+
+/* Footer */
+
+footer{
+padding:40px 10%;
+text-align:center;
+background:#0a0a14;
+}
+
+.footer-links{
+margin-bottom:20px;
+}
+
+.footer-links a{
+margin:0 15px;
+color:white;
+text-decoration:none;
+}
+
+.social i{
+margin:10px;
+font-size:22px;
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.nav-links{
+display:none;
+}
+
+.feature-container{
+flex-direction:column;
+align-items:center;
+}
+
+}

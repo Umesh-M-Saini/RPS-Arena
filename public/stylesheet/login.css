@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+
+/* Floating icons */
+.floating {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.1;
+  animation: float 12s infinite linear;
+}
+
+.rock { left: 10%; animation-duration: 12s; }
+.paper { left: 50%; animation-duration: 15s; }
+.scissors { left: 80%; animation-duration: 18s; }
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-10vh) rotate(360deg); }
+}
+
+.login-card {
+  width: 380px;
+  height: 55vh;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+  text-align: center;
+}
+
+.login-card h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.login-card p {
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.input-group input:focus {
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.password-group span {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00ffff;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #00cccc;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.bottom-text {
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.bottom-text a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}
+
+/* error box css */
+.error-box{
+position: fixed;
+top: 10vh;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(255,0,0,0.15);
+border: 1px solid red;
+color: white;
+padding: 12px 25px;
+border-radius: 8px;
+font-size: 14px;
+box-shadow: 0 0 10px red;
+animation: slideDown 0.5s ease;
+z-index: 1000;
+}
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translate(-50%,-20px);
+}
+to{
+opacity:1;
+transform:translate(-50%,0);
+}
+}
