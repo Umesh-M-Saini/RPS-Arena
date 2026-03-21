@@ -26,7 +26,6 @@ img {
     position: fixed; /* Changed from sticky to fixed for 100vw consistency */
     top: 0;
     left: 0;
-    z-index: 1000;
     width: 100vw !important;
     transition: all 0.3s ease;
 }
