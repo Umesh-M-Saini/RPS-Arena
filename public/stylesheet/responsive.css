@@ -21,7 +21,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%;
+    width: 100vw;
     transition: all 0.3s ease;
 }
 
