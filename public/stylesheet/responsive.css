@@ -1,0 +1,247 @@
+/* ==========================================================================
+   RPS ARENA - GLOBAL RESPONSIVE STYLES
+   Optimized for: Mobile, Tablet, Laptop, and Desktop
+   ========================================================================== */
+
+/* --- Root Variables for Responsive Tweaks --- */
+:root {
+    --nav-bg: #0a0a14;
+    --accent-color: #8b5cf6;
+    --text-main: white;
+}
+
+/* --- Global Utilities --- */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Responsive Navbar Implementation --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu Icon (Hidden by default) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-main);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* 1. Mobile Devices (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile Nav Links Overlay */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--nav-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 10px;
+    }
+
+    /* Hero adjustments */
+    .hero h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+        padding: 0 10px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 80%;
+        margin: 0 !important;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+
+    /* Play Page Adjustments */
+    .game-container {
+        width: 95% !important;
+        padding: 20px !important;
+    }
+
+    .choices {
+        gap: 10px;
+    }
+
+    .choice {
+        font-size: 2rem !important;
+        padding: 10px !important;
+    }
+
+    /* Profile Page */
+    .profile-card {
+        width: 95% !important;
+        padding: 20px !important;
+    }
+
+    .stats {
+        grid-template-columns: 1fr !important; /* Single column on mobile */
+    }
+
+    /* Auth Pages (Login/Signup) */
+    .login-card {
+        width: 90% !important;
+        height: auto !important;
+        padding: 30px 20px !important;
+    }
+}
+
+/* 2. Tablet Devices (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 100vh;
+        background-color: var(--nav-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transition: 0.4s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem !important;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        padding: 0 5%;
+    }
+
+    .feature-card {
+        width: 100% !important;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Auth Pages */
+    .login-card {
+        width: 400px !important;
+        height: auto !important;
+    }
+}
+
+/* 3. Laptop Devices (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem !important;
+    }
+
+    .feature-container {
+        gap: 20px !important;
+    }
+
+    .feature-card {
+        width: 220px !important;
+    }
+}
+
+/* 4. Large Desktop (1025px+) */
+@media screen and (min-width: 1025px) {
+    .navbar {
+        max-width: 1400px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+    }
+}
+
+/* Hamburger Animation */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+}

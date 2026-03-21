@@ -8,6 +8,7 @@
 <title>Play | RPS Arena</title>
 
 <link rel="stylesheet" href="/stylesheet/play.css">
+<link rel="stylesheet" href="/stylesheet/responsive.css">
 
 </head>
 
@@ -25,6 +26,11 @@
                 <li><a href="/login">Login</a></li>
             <% } %>
         </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <div class="game-container">
@@ -97,6 +103,7 @@ Make your move!
   window.MATCH_TIME = <%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? 40 : 20 %>;
 </script>
 <script src="/javascript/play.js"></script>
+<script src="/javascript/responsive.js"></script>
 
 </body>
 </html>
