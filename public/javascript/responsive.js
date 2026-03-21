@@ -1,4 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* Highlights of the fix */
+.navbar {
+    position: fixed; /* Changed to fixed for consistency */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw !important; /* Enforced 100vw as requested */
+    transition: all 0.3s ease;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scroll from 100vw */
+    width: 100%;
+}document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 

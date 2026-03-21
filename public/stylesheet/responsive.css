@@ -11,6 +11,11 @@
 }
 
 /* --- Global Utilities --- */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -18,10 +23,11 @@ img {
 
 /* --- Responsive Navbar Implementation --- */
 .navbar {
-    position: sticky;
+    position: fixed; /* Changed from sticky to fixed for 100vw consistency */
     top: 0;
+    left: 0;
     z-index: 1000;
-    width: 100vw;
+    width: 100vw !important;
     transition: all 0.3s ease;
 }
 
@@ -224,8 +230,6 @@ img {
 /* 4. Large Desktop (1025px+) */
 @media screen and (min-width: 1025px) {
     .navbar {
-        max-width: 1400px;
-        margin: 0 auto;
         left: 0;
         right: 0;
     }
