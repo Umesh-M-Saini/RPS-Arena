@@ -6,7 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Play | RPS Arena</title>
-
+<nav class="navbar">
+    <div class="logo">RPS Arena</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/play">Play</a></li>
+        <!-- Auth logic here -->
+        <% if(typeof isAuthenticated !== 'undefined' && isAuthenticated){ %>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        <% } else { %>
+            <li><a href="/login">Login</a></li>
+        <% } %>
+    </ul>
+    <!-- The Hamburger Icon -->
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
 <link rel="stylesheet" href="/stylesheet/play.css">
 <link rel="stylesheet" href="/stylesheet/responsive.css">
 

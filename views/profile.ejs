@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+<nav class="navbar">
+    <div class="logo">RPS Arena</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/play">Play</a></li>
+        <!-- Auth logic here -->
+        <% if(typeof isAuthenticated !== 'undefined' && isAuthenticated){ %>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        <% } else { %>
+            <li><a href="/login">Login</a></li>
+        <% } %>
+    </ul>
+    <!-- The Hamburger Icon -->
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
