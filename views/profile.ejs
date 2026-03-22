@@ -1,30 +1,11 @@
-<nav class="navbar">
-    <div class="logo">RPS Arena</div>
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/play">Play</a></li>
-        <!-- Auth logic here -->
-        <% if(typeof isAuthenticated !== 'undefined' && isAuthenticated){ %>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/auth/logout">Logout</a></li>
-        <% } else { %>
-            <li><a href="/login">Login</a></li>
-        <% } %>
-    </ul>
-    <!-- The Hamburger Icon -->
-    <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</nav><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | RPS Arena</title>
     <link rel="stylesheet" href="/stylesheet/profile.css">
-    <link rel="stylesheet" href="/stylesheet/responsive.css">
+    <link rel="stylesheet" href="/css/navbar.css">
 </head>
 <body>
 
@@ -33,25 +14,11 @@
     <div class="floating paper">📄</div>
     <div class="floating scissors">✂️</div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">RPS Arena</div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/play">Play</a></li>
-            <li><a href="/profile" class="active">Profile</a></li>
-            <li><a href="/auth/logout">Logout</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <!-- Navbar Partial -->
+    <%- include('partials/nav') %>
 
     <!-- Main Profile Content -->
     <div class="profile-container">
-        
         <div class="profile-card">
             <div class="username">
                 👤 <%= user.username %>
@@ -81,6 +48,6 @@
         </div>
     </div>
 
-    <script src="/javascript/responsive.js"></script>
+    <script src="/js/navbar.js"></script>
 </body>
 </html>

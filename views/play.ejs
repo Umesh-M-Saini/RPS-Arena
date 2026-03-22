@@ -1,128 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Play | RPS Arena</title>
-<nav class="navbar">
-    <div class="logo">RPS Arena</div>
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/play">Play</a></li>
-        <!-- Auth logic here -->
-        <% if(typeof isAuthenticated !== 'undefined' && isAuthenticated){ %>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/auth/logout">Logout</a></li>
-        <% } else { %>
-            <li><a href="/login">Login</a></li>
-        <% } %>
-    </ul>
-    <!-- The Hamburger Icon -->
-    <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</nav>
-<link rel="stylesheet" href="/stylesheet/play.css">
-<link rel="stylesheet" href="/stylesheet/responsive.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play | RPS Arena</title>
+    <link rel="stylesheet" href="/stylesheet/play.css">
+    <link rel="stylesheet" href="/css/navbar.css">
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <div class="logo">RPS Arena</div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/play" class="active">Play</a></li>
-            <% if(typeof isAuthenticated !== 'undefined' && isAuthenticated){ %>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/auth/logout">Logout</a></li>
-            <% } else { %>
-                <li><a href="/login">Login</a></li>
-            <% } %>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <!-- Navbar Partial -->
+    <%- include('partials/nav') %>
 
     <div class="game-container">
+        <h1>RPS Arena</h1>
+        <p class="subtitle">Choose your move</p>
 
-<h1>RPS Arena</h1>
-<p class="subtitle">Choose your move</p>
+        <!-- Toast -->
+        <div id="toast" class="toast hidden">Time is over. You cannot make a move.</div>
 
-<!-- Toast -->
-<div id="toast" class="toast hidden">Time is over. You cannot make a move.</div>
+        <!-- Timer -->
+        <div class="game-info">
+            <div class="timer">
+                ⏱ Time: <span id="time">10</span>s
+            </div>
+            <button id="pauseBtn" class="pause-btn">⏸ Pause</button>
+        </div>
 
-<!-- Timer -->
+        <!-- Score -->
+        <div class="score-board">
+            <div class="score">
+                Player
+                <span id="playerScore">0</span>
+            </div>
+            <div class="score">
+                Computer
+                <span id="computerScore">0</span>
+            </div>
+        </div>
 
-<div class="game-info">
-    <div class="timer">
-        ⏱ Time: <span id="time">10</span>s
+        <!-- Choices -->
+        <div class="choices">
+            <button class="choice" data-choice="rock">🪨</button>
+            <button class="choice" data-choice="paper">📄</button>
+            <button class="choice" data-choice="scissors">✂️</button>
+        </div>
+
+        <!-- Result -->
+        <div class="result" id="result">
+            Make your move!
+        </div>
+
+        <button class="restart-btn" onclick="restartGame()">Restart Match</button>
     </div>
-    <button id="pauseBtn" class="pause-btn">⏸ Pause</button>
-</div>
 
-<!-- Score -->
-
-<div class="score-board">
-
-<div class="score">
-Player
-<span id="playerScore">0</span>
-</div>
-
-<div class="score">
-Computer
-<span id="computerScore">0</span>
-</div>
-
-</div>
-
-<!-- Choices -->
-
-<div class="choices">
-
-<button class="choice" data-choice="rock">🪨</button>
-<button class="choice" data-choice="paper">📄</button>
-<button class="choice" data-choice="scissors">✂️</button>
-
-</div>
-
-<!-- Result -->
-
-<div class="result" id="result">
-Make your move!
-</div>
-
-<button class="restart-btn" onclick="restartGame()">Restart Match</button>
-
-</div>
-
-<!-- Result Modal -->
-<div id="resultModal" class="modal hidden">
-  <div class="modal-card" id="modalCard">
-    <div class="modal-title" id="modalTitle">Match Result</div>
-    <div class="modal-body" id="modalBody">You Win!</div>
-    <div class="modal-actions">
-      <a class="modal-btn" href="/">Go to Home</a>
+    <!-- Result Modal -->
+    <div id="resultModal" class="modal hidden">
+        <div class="modal-card" id="modalCard">
+            <div class="modal-title" id="modalTitle">Match Result</div>
+            <div class="modal-body" id="modalBody">You Win!</div>
+            <div class="modal-actions">
+                <a class="modal-btn" href="/">Go to Home</a>
+            </div>
+        </div>
+        <div class="modal-backdrop"></div>
     </div>
-  </div>
-  <div class="modal-backdrop"></div>
-</div>
 
-<script>
-  window.IS_AUTHENTICATED = <%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? 'true' : 'false' %>;
-  window.MATCH_TIME = <%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? 40 : 20 %>;
-</script>
-<script src="/javascript/play.js"></script>
-<script src="/javascript/responsive.js"></script>
-
+    <script>
+        window.IS_AUTHENTICATED = <%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? 'true' : 'false' %>;
+        window.MATCH_TIME = <%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? 40 : 20 %>;
+    </script>
+    <script src="/javascript/play.js"></script>
+    <script src="/js/navbar.js"></script>
 </body>
 </html>
